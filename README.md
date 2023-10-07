@@ -41,7 +41,7 @@ To get started with this template, follow these steps:
 
 3. **npm install**
    ```bash
-   cd react-native-auth-template
+   npm install
 
 4. **Launch the app on your device or emulator:**
    - For iOS: npm run ios
