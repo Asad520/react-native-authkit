@@ -39,7 +39,7 @@ To get started with this template, follow these steps:
    ```bash
    cd react-native-auth-template
 
-3. **npm install**
+3. **install dependencies**
    ```bash
    npm install
 
