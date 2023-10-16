@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "gradle": "cd android; ./gradlew clean; cd ..",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "start": "react-native start",
-    "test": "jest"
+    "start:clean": "react-native start --reset-cache",
+    "test": "jest",
+    "pod": "cd ios; RCT_NEW_ARCH_ENABLED=1 bundle exec pod install --verbose; cd ..",
+    "pod:clean": "rm -rf ios/Pods; rm ios/Podfile.lock; yarn pod"
   },
   "dependencies": {
     "react": "18.2.0",
