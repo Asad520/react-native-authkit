@@ -1,4 +1,5 @@
 # React Native RTK Query Authentication Template with Styled Components
+
 <br>
 
 ![GitHub stars](https://img.shields.io/github/stars/Asad520/react-native-authkit.svg?style=social)
@@ -35,26 +36,38 @@ To get started with this template, follow these steps:
    ```bash
    git clone https://github.com/Asad520/react-native-authkit.git
 
+   ```
+
 2. **Navigate to the project directory:**
+
    ```bash
    cd react-native-auth-template
 
+   ```
+
 3. **Install dependencies**
+
    ```bash
    npm install
+
+   ```
 
 4. **Launch the app on your device or emulator:**
    - For iOS: npm run ios
    - For Android: npm run android
-  
+
 ## Configuration
+
 Before running the app, make sure to configure the following settings:
+
 - Authentication Endpoints: Update the API endpoints for user registration, login, and password reset in the src/config/auth.js file.
 
 ## Usage
+
 This template is intended to serve as a starting point for your React Native authentication project. You can build upon it by adding your app-specific features and customizations.
 
 ## Styling
+
 Styled Components are used for styling in this template. You can customize the app's appearance by editing the styles defined in the src/styles directory.
 
 ## Acknowledgments
