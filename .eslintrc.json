@@ -1,0 +1,107 @@
+{
+  "root": true,
+  "extends": [
+    "@react-native-community",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:import/recommended",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "react-native",
+    "import",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {
+        "no-nested-ternary": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "consistent-return": "off",
+        "react/prop-types": "off",
+        "react-native/no-color-literals": "off",
+        "react/jsx-no-constructed-context-values": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index"
+            ],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "pathGroups": [
+              {
+                "pattern": "react-native",
+                "group": "builtin",
+                "position": "before"
+              },
+              {
+                "pattern": "react",
+                "group": "builtin",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": [
+              "react",
+              "react-native"
+            ]
+          }
+        ],
+        "import/no-cycle": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/prefer-default-export": "off",
+        "no-console": "off",
+        "no-shadow": "off",
+        "react-native/no-raw-text": "off",
+        "react/jsx-filename-extension": [
+          "warn",
+          {
+            "extensions": [
+              ".jsx",
+              ".tsx"
+            ]
+          }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/require-default-props": "off",
+        "no-constructor-return": "off",
+        "no-plusplus": "off",
+        "react-native/split-platform-components": "off",
+        "react-native/no-inline-styles": "warn",
+        "react/function-component-definition": [
+          "error",
+          {
+            "namedComponents": [
+              "arrow-function",
+              "function-declaration"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "__tests__/**"
+      ],
+      "rules": {
+        "react/jsx-filename-extension": "off"
+      }
+    }
+  ]
+}

@@ -64,3 +64,9 @@ yarn-error.log
 
 # testing
 /coverage
+
+.vscode/settings.json
+package-lock.json
+ios/Podfile.lock
+yarn.lock
+yarn-error.log
