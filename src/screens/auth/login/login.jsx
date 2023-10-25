@@ -6,14 +6,19 @@ import {
   View,
 } from 'react-native';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setIsAuthenticated } from '@src/store';
 
 export const Login = ({ navigation }) => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
     // handle login logic here
     console.log('handle login');
+    dispatch(setIsAuthenticated({ isAuthenticated: true }));
   };
 
   const navigateToSignup = () => navigation.navigate('Signup');
