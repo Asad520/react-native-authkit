@@ -96,6 +96,16 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off"
   },
+  "overrides": [
+    {
+      "files": [
+        "./src/store/**"
+      ],
+      "rules": {
+        "no-param-reassign": "off"
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "alias": {
