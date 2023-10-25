@@ -1,6 +1,6 @@
-import { StatusBar, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import React from 'react';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
 import { Navigation } from './navigation';
@@ -14,9 +14,3 @@ export const App = () => (
     </SafeAreaProvider>
   </Provider>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
