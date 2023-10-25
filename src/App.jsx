@@ -1,16 +1,12 @@
-import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import React from 'react';
-import { Login } from '@screens/auth';
+
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Navigation } from './navigation';
 
 export const App = () => (
-  <SafeAreaView style={styles.container}>
-    <StatusBar barStyle="light-content" />
-    <Login />
-  </SafeAreaView>
+  <SafeAreaProvider>
+    <StatusBar barStyle="dark-content" />
+    <Navigation />
+  </SafeAreaProvider>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
