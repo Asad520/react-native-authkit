@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 
-export const Login = () => {
+export const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,6 +15,8 @@ export const Login = () => {
     // handle login logic here
     console.log('handle login');
   };
+
+  const navigateToSignup = () => navigation.navigate('Signup');
 
   return (
     <View style={styles.container}>
@@ -37,8 +39,8 @@ export const Login = () => {
       </TouchableOpacity>
 
       <Text style={styles.signupText}>Don&apos;t have an account?</Text>
-      <TouchableOpacity onPress={() => console.log('navigate to signup')}>
-        <Text style={styles.link}> Sign up</Text>
+      <TouchableOpacity onPress={navigateToSignup}>
+        <Text style={styles.link}>Sign up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: 'center',
+    backgroundColor: '#fff',
     flex: 1,
     justifyContent: 'center',
   },
