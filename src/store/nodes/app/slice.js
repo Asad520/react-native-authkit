@@ -9,10 +9,13 @@ export const appSlice = createSlice({
     setIsAuthenticated(state, { payload: { isAuthenticated } }) {
       state.isAuthenticated = isAuthenticated;
     },
+    setCountries(state, { payload: { countries } }) {
+      state.countries = countries;
+    },
   },
 });
 
 export const {
   reducer: appReducer,
-  actions: { setIsAuthenticated },
+  actions: { setIsAuthenticated, setCountries },
 } = appSlice;
