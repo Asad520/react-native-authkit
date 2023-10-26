@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const BASE_URL = 'https://pokeapi.co/api/v2/';
+import Config from 'react-native-config';
 
 export const rootApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: Config.AUTH_SERVER_URL,
     prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.accessToken;
+      const token = getState()?.auth?.accessToken;
       if (token) {
         headers.set('Authorization', `Bearer ${token}`);
       }
