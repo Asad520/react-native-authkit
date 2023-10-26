@@ -70,3 +70,6 @@ package-lock.json
 ios/Podfile.lock
 yarn.lock
 yarn-error.log
+
+# Environment variables
+.env
