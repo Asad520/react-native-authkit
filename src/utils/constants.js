@@ -1,2 +1,2 @@
-export const JWT_KEY = 'xiangqi.jwt_token';
-export const REFRESH_JWT_KEY = 'xq.refresh_token';
+export const JWT_KEY = 'authapp.jwt_token';
+export const REFRESH_JWT_KEY = 'authapp.refresh_token';

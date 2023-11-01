@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
 
-import { setIsAuthenticated, signout } from '@src/store/nodes/auth';
+import { signout } from '@src/store/nodes/auth';
 import { tokenExpireEvent } from '@src/utils';
 
 export const Home = () => {
