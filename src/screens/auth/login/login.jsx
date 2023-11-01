@@ -7,18 +7,28 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setIsAuthenticated } from '@src/store';
+import 'react-native-get-random-values';
+import { v4 as uuidv4 } from 'uuid';
+import { useGetCountriesQuery, useSigninMutation } from '@src/store';
 
 export const Login = ({ navigation }) => {
-  const dispatch = useDispatch();
+  useGetCountriesQuery();
+  const [signin, { isLoading }] = useSigninMutation();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // handle login logic here
-    console.log('handle login');
-    dispatch(setIsAuthenticated({ isAuthenticated: true }));
+    if (!email || !password) return alert('Please fill all fields');
+
+    const data = {
+      email,
+      password,
+      uuid: uuidv4(),
+      time_zone: new Intl.DateTimeFormat().resolvedOptions().timeZone,
+    };
+    await signin(data);
   };
 
   const navigateToSignup = () => navigation.navigate('Signup');
@@ -31,6 +41,7 @@ export const Login = ({ navigation }) => {
         placeholder="Email"
         onChangeText={setEmail}
         value={email}
+        keyboardType="email-address"
       />
       <TextInput
         style={styles.input}
@@ -44,7 +55,7 @@ export const Login = ({ navigation }) => {
       </TouchableOpacity>
 
       <Text style={styles.signupText}>Don&apos;t have an account?</Text>
-      <TouchableOpacity onPress={navigateToSignup}>
+      <TouchableOpacity onPress={navigateToSignup} disabled={isLoading}>
         <Text style={styles.link}>Sign up</Text>
       </TouchableOpacity>
     </View>

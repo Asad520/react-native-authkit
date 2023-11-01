@@ -1,8 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setIsAuthenticated } from '@src/store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
+
+import { setIsAuthenticated, signout } from '@src/store/nodes/auth';
+import { tokenExpireEvent } from '@src/utils';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -13,7 +15,8 @@ export const Home = () => {
   const handleLogout = () => {
     // handle logout logic here
     console.log('handle logout');
-    dispatch(setIsAuthenticated({ isAuthenticated: false }));
+    tokenExpireEvent();
+    dispatch(signout());
   };
 
   return (

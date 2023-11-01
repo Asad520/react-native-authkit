@@ -6,9 +6,6 @@ export const appSlice = createSlice({
   name: 'app',
   initialState: initialAppState,
   reducers: {
-    setIsAuthenticated(state, { payload: { isAuthenticated } }) {
-      state.isAuthenticated = isAuthenticated;
-    },
     setCountries(state, { payload: { countries } }) {
       state.countries = countries;
     },
@@ -17,5 +14,5 @@ export const appSlice = createSlice({
 
 export const {
   reducer: appReducer,
-  actions: { setIsAuthenticated, setCountries },
+  actions: { setCountries },
 } = appSlice;
