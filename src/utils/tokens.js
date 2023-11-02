@@ -12,7 +12,6 @@ export const refreshToken = async () => {
   try {
     const jwt = await Storage.getItem(REFRESH_JWT_KEY);
     const { JWT_COOKIE_EXPIRES } = Config;
-    console.log('jwt', jwt);
     if (!jwt) {
       return false;
     }
