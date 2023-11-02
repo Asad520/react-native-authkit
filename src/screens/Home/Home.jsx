@@ -1,16 +1,16 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
 
 import { signout } from '@src/store/nodes/auth';
-import { tokenExpireEvent } from '@src/utils';
+import { Storage, USER, tokenExpireEvent } from '@src/utils';
 
 export const Home = () => {
   const dispatch = useDispatch();
   const { top, bottom } = useSafeAreaInsets();
 
-  const [user] = useState({ name: 'John Doe', age: 30 });
+  const [user, setUser] = useState({ username: 'John Doe', age: 30 });
 
   const handleLogout = () => {
     // handle logout logic here
@@ -18,6 +18,15 @@ export const Home = () => {
     tokenExpireEvent();
     dispatch(signout());
   };
+
+  const getUserFromStorage = async () => {
+    const loggedInUser = await Storage.getItem(USER);
+    setUser(loggedInUser);
+  };
+
+  useEffect(() => {
+    getUserFromStorage();
+  }, []);
 
   return (
     <View
@@ -27,7 +36,7 @@ export const Home = () => {
         paddingTop: top,
       }}>
       <Text style={styles.heading}>Home</Text>
-      <Text style={styles.username}>{user.name}</Text>
+      <Text style={styles.username}>{user.username}</Text>
       <TouchableOpacity style={styles.button} onPress={handleLogout}>
         <Text style={styles.buttonText}>Logout</Text>
       </TouchableOpacity>

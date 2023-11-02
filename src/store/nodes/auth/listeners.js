@@ -6,7 +6,7 @@
 import Config from 'react-native-config';
 import { authApi } from '@src/store/api';
 import { actions } from '@src/store/nodes/auth';
-import { Storage, JWT_KEY, REFRESH_JWT_KEY } from '@src/utils';
+import { Storage, JWT_KEY, REFRESH_JWT_KEY, USER } from '@src/utils';
 
 const {
   endpoints: { signin },
@@ -37,6 +37,7 @@ const authSigninListener = {
         value: payload.refresh_token,
         expires: refreshTokenExpiry.toUTCString(),
       }),
+      Storage.setItem(USER, payload.user),
     ]);
 
     dispatch(actions.signin({ ...payload }));
