@@ -25,28 +25,32 @@ export const Signup = ({ navigation }) => {
       <Text style={styles.title}>Signup</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
+        placeholder="Username..."
         onChangeText={setUsername}
         value={username}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Email..."
         onChangeText={setEmail}
         value={email}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Password..."
         onChangeText={setPassword}
         value={password}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
         secureTextEntry
       />
       <TextInput
         style={styles.input}
-        placeholder="Country"
+        placeholder="Country..."
         onChangeText={setCountry}
         value={country}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Signup</Text>

@@ -37,16 +37,18 @@ export const Login = ({ navigation }) => {
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Email..."
         onChangeText={setEmail}
         value={email}
         keyboardType="email-address"
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Password..."
         onChangeText={setPassword}
         value={password}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
