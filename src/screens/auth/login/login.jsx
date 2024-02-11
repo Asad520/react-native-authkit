@@ -1,4 +1,5 @@
 import {
+  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -19,7 +20,8 @@ export const Login = ({ navigation }) => {
 
   const handleLogin = async () => {
     // handle login logic here
-    if (!email || !password) return alert('Please fill all fields');
+    if (!email || !password)
+      return Alert.alert('Email and password are required');
 
     const data = {
       email,
@@ -37,16 +39,18 @@ export const Login = ({ navigation }) => {
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Email..."
         onChangeText={setEmail}
         value={email}
         keyboardType="email-address"
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Password..."
         onChangeText={setPassword}
         value={password}
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
