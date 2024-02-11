@@ -1,4 +1,5 @@
 import {
+  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -19,7 +20,8 @@ export const Login = ({ navigation }) => {
 
   const handleLogin = async () => {
     // handle login logic here
-    if (!email || !password) return alert('Please fill all fields');
+    if (!email || !password)
+      return Alert.alert('Email and password are required');
 
     const data = {
       email,

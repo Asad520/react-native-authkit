@@ -1,3 +1,4 @@
+import { StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 
@@ -6,7 +7,7 @@ export const Select = () => {
 
   return (
     <Picker
-      style={{ width: '100%', height: 200, backgroundColor: 'yellow' }}
+      style={styles.pickerStyle}
       selectedValue={selectedLanguage}
       onValueChange={(itemValue) => setSelectedLanguage(itemValue)}
       dropdownIconColor="red">
@@ -15,3 +16,11 @@ export const Select = () => {
     </Picker>
   );
 };
+
+const styles = StyleSheet.create({
+  pickerStyle: {
+    backgroundColor: 'yellow',
+    height: 200,
+    width: '100%',
+  },
+});
