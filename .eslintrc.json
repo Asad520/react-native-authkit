@@ -105,6 +105,12 @@
         "no-param-reassign": "off",
         "camelcase": "off"
       }
+    },
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ]
     }
   ],
   "settings": {
