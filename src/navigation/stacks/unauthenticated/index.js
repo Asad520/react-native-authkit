@@ -1,1 +1,1 @@
-export { UnauthenticatedStack } from './UnauthenticatedStack';
+export { UnauthenticatedStack } from './unauthenticatedStack';
