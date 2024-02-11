@@ -3,9 +3,6 @@ name: Lint
 on:
   push:
     branches-ignore:
-  pull_request:
-    branches:
-      - '*' # Run linting on pull requests
 
 jobs:
   lint:

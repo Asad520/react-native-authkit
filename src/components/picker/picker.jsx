@@ -7,7 +7,7 @@ export const Select = () => {
 
   return (
     <Picker
-      style={{ ...styles.pickerStyle, color: 'black' }}
+      style={styles.pickerStyle}
       selectedValue={selectedLanguage}
       onValueChange={(itemValue) => setSelectedLanguage(itemValue)}
       dropdownIconColor="red">
