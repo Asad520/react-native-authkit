@@ -1,0 +1,21 @@
+name: Lint
+
+on:
+  push:
+    branches-ignore:
+  pull_request:
+    branches:
+      - '*' # Run linting on pull requests
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run linting
+        run: yarn lint
